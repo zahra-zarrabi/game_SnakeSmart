@@ -106,8 +106,8 @@ if __name__=="__main__":
     apple=Apple()
     pear = Pear()
     bomb=Bomb()
-    #pygame.mixer.music.load("sound.wav")
-    #pygame.mixer.music.play()
+    pygame.mixer.music.load("sound.wav")
+    pygame.mixer.music.play()
     clock=pygame.time.Clock()
     my_screen.fill((3,200,0))
 
@@ -301,7 +301,7 @@ if __name__=="__main__":
         bomb.show_bomb()
         pygame.display.update()
         clock.tick(30)
-               
+
 
 
 
