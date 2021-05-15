@@ -58,7 +58,7 @@ class Apple:
 
     def show_apple(self):
         my_screen.blit(self.image_apple,[self.x,self.y])
-        # pygame.draw.circle(my_screen,self.color,[self.x,self.y],self.r)
+
 
 class Pear:
     def __init__(self):
@@ -95,9 +95,6 @@ def move_autom(snake, direction):
         snake.y_change = 1
     snake.move_snake()
 
-    
-
-
 if __name__=="__main__":
 
     width=900
@@ -114,15 +111,11 @@ if __name__=="__main__":
     clock=pygame.time.Clock()
     my_screen.fill((3,200,0))
 
-
     while True:
         pygame.display.set_caption('python game made by zahra     score:%d' % snake.score)
         import math
         dis_apple = math.sqrt((snake.x-apple.x)**2 + (snake.y-apple.y)**2)
         dis_pear = math.sqrt((snake.x-pear.x)**2 + (snake.y-pear.y)**2)
-        #pygame.quit()
-        print(dis_apple < dis_pear)
-        print(snake.x, apple.x)
         
         if dis_apple < dis_pear:
             while snake.x < apple.x:
@@ -271,7 +264,7 @@ if __name__=="__main__":
                     break
                 pygame.display.update()
                 clock.tick(30)
-        # sys.exit()
+
         if width < snake.x or snake.x < 0 or height - snake.h < snake.y or snake.y < 0 or snake.score < 0:
             time.sleep(1)
             print('gameover')
@@ -308,37 +301,7 @@ if __name__=="__main__":
         bomb.show_bomb()
         pygame.display.update()
         clock.tick(30)
-                # move_autom(snake, apple, direction='left')
-                # move_autom(snake, apple, direction='up')
-                # move_autom(snake, apple, direction='down')
-		
-            
-            
-
-
-
-
-
-        # for event in pygame.event.get():
-        #     if event.type==pygame.KEYDOWN:
-        #         if event.key==pygame.K_LEFT:
-        #             snake.x_change= -1
-        #             snake.y_change=0
-        #         elif event.key == pygame.K_RIGHT:
-        #             snake.x_change = 1
-        #             snake.y_change = 0
-        #         elif event.key == pygame.K_UP:
-        #             snake.y_change = -1
-        #             snake.x_change = 0
-        #         elif event.key == pygame.K_DOWN:
-        #             snake.y_change = 1
-        #             snake.x_change = 0
-        #
-        #         elif event.key == pygame.quit():
-        #             pygame.quit()
-        #             quit()
-        #
-        # print('--------------------------------')
+               
 
 
 
